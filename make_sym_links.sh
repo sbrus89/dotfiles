@@ -6,9 +6,9 @@
 
 ########## Variables
 
-dir=~/repos/dotFiles     # dotfiles directory
-olddir=~/.dotfiles_old_`date +"%y%m%d"`             # old dotfiles backup directory
-files="bashrc bash_aliases"    # list of files/folders to symlink in homedir
+dir=~/dotfiles                           # dotfiles directory
+olddir=~/.dotfiles_old_`date +"%y%m%d"`  # old dotfiles backup directory
+files="bashrc vimrc"                     # list of files/folders to symlink in homedir
 
 ##########
 
