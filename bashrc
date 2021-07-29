@@ -27,12 +27,28 @@ elif [[ $HOST = ba* ]] ; then
   alias ml-gnu='module purge; module use /usr/projects/climate/SHARED_CLIMATE/modulefiles/spack-lmod/linux-rhel7-x86_64; module load gcc/6.4.0; module load openmpi/2.1.2; module load cmake/3.12.1; module load mkl; module load openmpi/2.1.2-bheb4xe/gcc/6.4.0/netcdf/4.4.1.1-zei2j6r; module load openmpi/2.1.2-bheb4xe/gcc/6.4.0/netcdf-fortran/4.4.4-v6vwmxs; module load openmpi/2.1.2-bheb4xe/gcc/6.4.0/parallel-netcdf/1.8.0-2qwcdbn; module load openmpi/2.1.2-bheb4xe/gcc/6.4.0/pio/1.10.0-ljj73au; export NETCDF=/usr/projects/climate/SHARED_CLIMATE/software/badger/spack-install/linux-rhel7-x86_64/gcc-6.4.0/netcdf-fortran-4.4.4-v6vwmxsv33t7pmulojlijwdbikrvmwkc; export PNETCDF=/usr/projects/climate/SHARED_CLIMATE/software/badger/spack-install/linux-rhel7-x86_64/gcc-6.4.0/parallel-netcdf-1.8.0-2qwcdbnjcq5pnkoqpx2s7um3s7ffo3xd; export PIO=/usr/projects/climate/SHARED_CLIMATE/software/badger/spack-install/linux-rhel7-x86_64/gcc-6.4.0/pio-1.10.0-ljj73au6ctgkwmh3gbd4mleljsumijys/; echo "loading MPAS-O moduels for badger"'
   alias inode='salloc --qos=interactive --time 1:00:00'
 
-elif [[ $HOST = b* ]] && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
+elif [[ $HOST = chr* ]] && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
+#############################################################
+# Chrysalis 
+#############################################################
+
+  alias ml-intel='module purge ; module load intel/20.0.4-kodw73g ; module load intel-mkl/2020.4.304-g2qaxzf ; module load openmpi/4.1.1-qiqkjbu ; module load hdf5/1.8.16-35xugty ; module load netcdf-c/4.4.1-2vngykq ; module load netcdf-cxx/4.2-gzago6i ; module load netcdf-fortran/4.4.4-2kddbib ; module load parallel-netcdf/1.11.0-go65een'
+
+
+elif [[ $HOST = b* ]]  && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
 #############################################################
 # Blues
 #############################################################
 
   alias ml-intel='module purge ; module load intel/17.0.0-pwabdn2 ; module load netcdf/4.4.1-tckdgwl ; module load netcdf-fortran/4.4.4-urmb6ss ; module load mvapich2/2.2-verbs-qwuab3b ; module load netcdf-fortran/4.4.4-urmb6ss'
+
+fi
+
+if ([[ $HOST = b* ]] || [[ $HOST = chr* ]]) && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
+#############################################################
+# LCRC (Blues or Chrysalis)
+#############################################################
+
 
   alias inode='srun -A condo -p acme-small -N 1 -t 1:00:00 --pty bash'
   alias e3sm-unified='source /lcrc/soft/climate/e3sm-unified/load_latest_e3sm_unified.sh'
