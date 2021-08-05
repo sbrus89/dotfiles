@@ -33,6 +33,7 @@ elif [[ $HOST = chr* ]] && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then
 #############################################################
 
   alias ml-intel='module purge ; module load intel/20.0.4-kodw73g ; module load intel-mkl/2020.4.304-g2qaxzf ; module load openmpi/4.1.1-qiqkjbu ; module load hdf5/1.8.16-35xugty ; module load netcdf-c/4.4.1-2vngykq ; module load netcdf-cxx/4.2-gzago6i ; module load netcdf-fortran/4.4.4-2kddbib ; module load parallel-netcdf/1.11.0-go65een'
+  alias e3sm-unified='source /lcrc/soft/climate/e3sm-unified/load_latest_e3sm_unified_chrysalis.sh'
 
 
 elif [[ $HOST = b* ]]  && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
@@ -41,6 +42,7 @@ elif [[ $HOST = b* ]]  && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then
 #############################################################
 
   alias ml-intel='module purge ; module load intel/17.0.0-pwabdn2 ; module load netcdf/4.4.1-tckdgwl ; module load netcdf-fortran/4.4.4-urmb6ss ; module load mvapich2/2.2-verbs-qwuab3b ; module load netcdf-fortran/4.4.4-urmb6ss'
+  alias e3sm-unified='source /lcrc/soft/climate/e3sm-unified/load_latest_e3sm_unified_anvil.sh'
 
 fi
 
@@ -51,7 +53,6 @@ if ([[ $HOST = b* ]] || [[ $HOST = chr* ]]) && [[ $DOMAIN = 'lcrc.anl.gov' ]]; t
 
 
   alias inode='srun -A condo -p acme-small -N 1 -t 1:00:00 --pty bash'
-  alias e3sm-unified='source /lcrc/soft/climate/e3sm-unified/load_latest_e3sm_unified.sh'
   alias queue='squeue -p acme-small,acme-medium,acme-large --format="%.6i %.8u %.8j %.7T %.6Q %4q %.19V %.19S %.10M %.10l %.4D %R"'
   alias free-nodes='sinfo -p acme-small,acme-medium,acme-large'
   export GIT_SSH="/home/sbrus/turq-ssh-hop.sh"
