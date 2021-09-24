@@ -44,6 +44,13 @@ elif [[ $HOST = b* ]]  && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then
   alias ml-intel='module purge ; module load intel/17.0.0-pwabdn2 ; module load netcdf/4.4.1-tckdgwl ; module load netcdf-fortran/4.4.4-urmb6ss ; module load mvapich2/2.2-verbs-qwuab3b ; module load netcdf-fortran/4.4.4-urmb6ss'
   alias e3sm-unified='source /lcrc/soft/climate/e3sm-unified/load_latest_e3sm_unified_anvil.sh'
 
+elif [[ $HOST = cori* ]] ; then 
+#############################################################
+# Cori 
+#############################################################
+
+  alias e3sm-unified='source /global/common/software/e3sm/anaconda_envs/load_latest_e3sm_unified_cori-haswell.sh'
+
 fi
 
 if ([[ $HOST = b* ]] || [[ $HOST = chr* ]]) && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
