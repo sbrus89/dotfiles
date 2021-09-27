@@ -51,6 +51,15 @@ elif [[ $HOST = cori* ]] ; then
 
   alias e3sm-unified='source /global/common/software/e3sm/anaconda_envs/load_latest_e3sm_unified_cori-haswell.sh'
 
+elif [[ $HOST = compy* ]]; then 
+#############################################################
+# Compy 
+#############################################################
+
+  alias ml-intel='module purge ; module load intel/19.0.5 ; module load intelmpi/2019u4 ; module load netcdf/4.6.3 ; module load pnetcdf/1.9.0 ; module load mkl/2019u5'
+  alias inode='srun --pty --nodes=1 --time=02:00:00 /bin/bash'
+  alias e3sm-unified='source /share/apps/E3SM/conda_envs/load_latest_e3sm_unified_compy.sh'
+
 fi
 
 if ([[ $HOST = b* ]] || [[ $HOST = chr* ]]) && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
