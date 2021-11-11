@@ -6,6 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 export PS1="\u@\h:\w\\$ "
+alias ls="ls --color=auto"
 
 HOST=`hostname -s`
 DOMAIN=`hostname -d`
