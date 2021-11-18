@@ -19,6 +19,7 @@ if [[ $HOST = gr* ]] ; then
   alias ml-gnu='module purge; module use /usr/projects/climate/SHARED_CLIMATE/modulefiles/all/; conda activate compass_py3.7; module load gcc/5.3.0 openmpi/1.10.5 netcdf/4.4.1 parallel-netcdf/1.5.0 pio/1.7.2; echo "loading MPAS-O modules for grizzly"'
   alias ml-intel='module purge; module load git; module use /usr/projects/climate/SHARED_CLIMATE/modulefiles/all/; module load intel/17.0.1 mvapich2/2.2 netcdf/4.4.1 parallel-netcdf/1.5.0 pio/1.7.2; echo "loading modules anaconda, intel, openmpi, netcdf, pnetcdf, pio for grizzly"'
   alias inode='salloc --qos=interactive --time 1:00:00'
+  alias e3sm-unified='source /usr/projects/climate/SHARED_CLIMATE/anaconda_envs/load_latest_e3sm_unified_grizzly.sh'
 
 elif [[ $HOST = ba* ]] ; then
 #############################################################
@@ -27,6 +28,7 @@ elif [[ $HOST = ba* ]] ; then
 
   alias ml-gnu='module purge; module use /usr/projects/climate/SHARED_CLIMATE/modulefiles/spack-lmod/linux-rhel7-x86_64; module load gcc/6.4.0; module load openmpi/2.1.2; module load cmake/3.12.1; module load mkl; module load openmpi/2.1.2-bheb4xe/gcc/6.4.0/netcdf/4.4.1.1-zei2j6r; module load openmpi/2.1.2-bheb4xe/gcc/6.4.0/netcdf-fortran/4.4.4-v6vwmxs; module load openmpi/2.1.2-bheb4xe/gcc/6.4.0/parallel-netcdf/1.8.0-2qwcdbn; module load openmpi/2.1.2-bheb4xe/gcc/6.4.0/pio/1.10.0-ljj73au; export NETCDF=/usr/projects/climate/SHARED_CLIMATE/software/badger/spack-install/linux-rhel7-x86_64/gcc-6.4.0/netcdf-fortran-4.4.4-v6vwmxsv33t7pmulojlijwdbikrvmwkc; export PNETCDF=/usr/projects/climate/SHARED_CLIMATE/software/badger/spack-install/linux-rhel7-x86_64/gcc-6.4.0/parallel-netcdf-1.8.0-2qwcdbnjcq5pnkoqpx2s7um3s7ffo3xd; export PIO=/usr/projects/climate/SHARED_CLIMATE/software/badger/spack-install/linux-rhel7-x86_64/gcc-6.4.0/pio-1.10.0-ljj73au6ctgkwmh3gbd4mleljsumijys/; echo "loading MPAS-O moduels for badger"'
   alias inode='salloc --qos=interactive --time 1:00:00'
+  alias e3sm-unified='source /usr/projects/climate/SHARED_CLIMATE/anaconda_envs/load_latest_e3sm_unified_badger.sh'
 
 elif [[ $HOST = chr* ]] && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
 #############################################################
@@ -100,7 +102,6 @@ if [[ $HOST = gr* ]] || [[ $HOST = ba* ]] ; then
 
   alias ls='ls --color=auto'
   alias queue='(sprio -w -o "%.15i %.10Y %.10a %.10f %.10j %.10q %.6N %.8T %u" ; echo ; sprio -o "%.15i %.10Y %.10a %.10f %.10j %.10q %.6    N %.8T %u" | grep -v JOBID | sort -k 2bnr,2 ; echo "\n\t\tFairshare: Overserved < .5 < Underserved")'
-  alias e3sm-unified='source /usr/projects/climate/SHARED_CLIMATE/anaconda_envs/load_latest_e3sm_unified.sh'
 
   # see https://hpc.lanl.gov/proxy_setup
   export http_proxy="http://proxyout.lanl.gov:8080"
