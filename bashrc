@@ -37,6 +37,7 @@ elif [[ $HOST = chr* ]] && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then
 
   alias ml-intel='module purge ; module load intel/20.0.4-kodw73g ; module load intel-mkl/2020.4.304-g2qaxzf ; module load openmpi/4.1.1-qiqkjbu ; module load hdf5/1.8.16-35xugty ; module load netcdf-c/4.4.1-2vngykq ; module load netcdf-cxx/4.2-gzago6i ; module load netcdf-fortran/4.4.4-2kddbib ; module load parallel-netcdf/1.11.0-go65een'
   alias e3sm-unified='source /lcrc/soft/climate/e3sm-unified/load_latest_e3sm_unified_chrysalis.sh'
+  alias inode='srun -p debug -N 1 -t 1:00:00 --pty bash'
 
 
 elif [[ $HOST = b* ]]  && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
