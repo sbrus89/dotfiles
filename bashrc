@@ -67,6 +67,13 @@ elif [[ $HOST = compy* ]]; then
   alias inode='srun --pty --nodes=1 --time=02:00:00 /bin/bash'
   alias e3sm-unified='source /share/apps/E3SM/conda_envs/load_latest_e3sm_unified_compy.sh'
 
+elif [[ $HOST = login*.summit ]]; then 
+#############################################################
+# Summit 
+#############################################################
+
+  alias inode='bsub -W 1:00 -nnodes 1 -P CLI115 -Is /bin/bash'
+
 fi
 
 if ([[ $HOST = b* ]] || [[ $HOST = chr* ]]) && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
