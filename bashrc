@@ -47,6 +47,9 @@ elif [[ $HOST = b* ]]  && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then
 
   alias ml-intel='module purge ; module load intel/17.0.0-pwabdn2 ; module load netcdf/4.4.1-tckdgwl ; module load netcdf-fortran/4.4.4-urmb6ss ; module load mvapich2/2.2-verbs-qwuab3b ; module load netcdf-fortran/4.4.4-urmb6ss'
   alias e3sm-unified='source /lcrc/soft/climate/e3sm-unified/load_latest_e3sm_unified_anvil.sh'
+  alias inode='srun -A condo -p acme-small -N 1 -t 1:00:00 --pty bash'
+  alias queue='squeue -p acme-small,acme-medium,acme-large --format="%.6i %.8u %.8j %.7T %.6Q %4q %.19V %.19S %.10M %.10l %.4D %R"'
+  alias free-nodes='sinfo -p acme-small,acme-medium,acme-large'
 
 elif [[ $HOST = cori* ]] ; then 
 #############################################################
@@ -72,9 +75,6 @@ if ([[ $HOST = b* ]] || [[ $HOST = chr* ]]) && [[ $DOMAIN = 'lcrc.anl.gov' ]]; t
 #############################################################
 
 
-  alias inode='srun -A condo -p acme-small -N 1 -t 1:00:00 --pty bash'
-  alias queue='squeue -p acme-small,acme-medium,acme-large --format="%.6i %.8u %.8j %.7T %.6Q %4q %.19V %.19S %.10M %.10l %.4D %R"'
-  alias free-nodes='sinfo -p acme-small,acme-medium,acme-large'
   export GIT_SSH="/home/sbrus/turq-ssh-hop.sh"
 
   # >>> conda initialize >>>
