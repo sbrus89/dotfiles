@@ -81,8 +81,7 @@ if ([[ $HOST = b* ]] || [[ $HOST = chr* ]]) && [[ $DOMAIN = 'lcrc.anl.gov' ]]; t
 # LCRC (Blues or Chrysalis)
 #############################################################
 
-
-  export GIT_SSH="/home/sbrus/turq-ssh-hop.sh"
+  alias dq='/usr/lpp/mmfs/bin/mmlsquota -u sbrus --block-size T fs2'
 
   # >>> conda initialize >>>
   # !! Contents within this block are managed by 'conda init' !!
