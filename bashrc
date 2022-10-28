@@ -62,6 +62,7 @@ elif [[ $HOST = compy* ]]; then
 #############################################################
 # Compy 
 #############################################################
+  module load git
 
   alias ml-intel='module purge ; module load intel/19.0.5 ; module load intelmpi/2019u4 ; module load netcdf/4.6.3 ; module load pnetcdf/1.9.0 ; module load mkl/2019u5'
   alias inode='srun --pty --nodes=1 --time=02:00:00 /bin/bash'
