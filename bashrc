@@ -58,6 +58,13 @@ elif [[ $HOST = cori* ]] ; then
 
   alias e3sm-unified='source /global/common/software/e3sm/anaconda_envs/load_latest_e3sm_unified_cori-haswell.sh'
 
+elif [[ $HOST = login* ]] ; then 
+#############################################################
+# Perlmutter
+#############################################################
+
+  alias e3sm-unified='source /global/common/software/e3sm/anaconda_envs/load_latest_e3sm_unified_pm-cpu.sh'
+
 elif [[ $HOST = compy* ]]; then 
 #############################################################
 # Compy 
