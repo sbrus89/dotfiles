@@ -51,19 +51,13 @@ elif [[ $HOST = b* ]]  && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then
   alias queue='squeue -p acme-small,acme-medium,acme-large --format="%.6i %.8u %.8j %.7T %.6Q %4q %.19V %.19S %.10M %.10l %.4D %R"'
   alias free-nodes='sinfo -p acme-small,acme-medium,acme-large'
 
-elif [[ $HOST = cori* ]] ; then 
+elif [[ $HOST = login* ]] && [[ $DOMAIN = 'chn' ]] ; then 
 #############################################################
-# Cori 
-#############################################################
-
-  alias e3sm-unified='source /global/common/software/e3sm/anaconda_envs/load_latest_e3sm_unified_cori-haswell.sh'
-
-elif [[ $HOST = login* ]] ; then 
-#############################################################
-# Perlmutter
+# Perlmutter 
 #############################################################
 
   alias e3sm-unified='source /global/common/software/e3sm/anaconda_envs/load_latest_e3sm_unified_pm-cpu.sh'
+  alias inode='salloc --nodes 1 --qos interactive --time 02:00:00 --constraint cpu'
 
 elif [[ $HOST = compy* ]]; then 
 #############################################################
