@@ -76,7 +76,16 @@ elif [[ $HOST = login*.summit ]]; then
 
   alias inode='bsub -W 1:00 -nnodes 1 -P CLI115 -Is /bin/bash'
 
+elif [[ $HOST = login* ]] && [[ $DOMAIN = 'frontier.olcf.ornl.gov' ]]; then 
+#############################################################
+# Frontier
+#############################################################
+
+  alias e3sm-unified='source /ccs/proj/cli115/software/e3sm-unified/load_latest_e3sm_unified_frontier.sh'
+
 fi
+
+
 
 if ([[ $HOST = b* ]] || [[ $HOST = chr* ]]) && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then 
 #############################################################
