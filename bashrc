@@ -51,7 +51,7 @@ elif [[ $HOST = b* ]]  && [[ $DOMAIN = 'lcrc.anl.gov' ]]; then
   alias queue='squeue -p acme-small,acme-medium,acme-large --format="%.6i %.8u %.8j %.7T %.6Q %4q %.19V %.19S %.10M %.10l %.4D %R"'
   alias free-nodes='sinfo -p acme-small,acme-medium,acme-large'
 
-elif [[ $HOST = login* ]] && [[ $DOMAIN = 'chn' ]] ; then 
+elif [[ $HOST = login* ]] && [[ $DOMAIN = 'chn.perlmutter.nersc.gov' ]] ; then 
 #############################################################
 # Perlmutter 
 #############################################################
