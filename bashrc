@@ -11,6 +11,9 @@ alias ls="ls --color=auto"
 HOST=`hostname -s`
 DOMAIN=`hostname -d`
 
+# enable ctrl+s to not stop terminal so it can do ctrl+r forward / ctrl+s back searches
+stty -ixon
+
 if [[ $HOST = gr* ]] ; then
 #############################################################
 # Grizzly
