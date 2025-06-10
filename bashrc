@@ -154,7 +154,8 @@ fi
 if [[ $HOST = csi0360872 ]] ; then
 
   alias ls='ls -G'
-  export GIT_SSH="/home/sbrus/turq-ssh-hop.sh"
+  alias anvil='ssh -J logins.lcrc.anl.gov sbrus@blues.lcrc.anl.gov'
+  alias gce='ssh -J sbrus@logins.cels.anl.gov sbrus@homes.cels.anl.gov'
 
   # >>> conda initialize >>>
   # !! Contents within this block are managed by 'conda init' !!
