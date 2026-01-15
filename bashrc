@@ -5,6 +5,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+export HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+shopt -s histappend
+
 export PS1="\u@\h:\w\\$ "
 alias ls="ls --color=auto"
 
@@ -124,6 +129,17 @@ if [[ $HOST = csi0360872 ]] ; then
 fi
 
 
+#############################################################
+# ANL Laptop 
+#############################################################
+if [[ $HOST = mcswl* || $HOST = Stevens-MacBook-Pro ]] ; then
+
+  alias ls='ls -G'
+  alias anvil='ssh -J logins.lcrc.anl.gov sbrus@blues.lcrc.anl.gov'
+  alias chrysalis='ssh -J logins.lcrc.anl.gov sbrus@chrysalis.lcrc.anl.gov'
+  alias gce='ssh -J sbrus@logins.cels.anl.gov sbrus@homes.cels.anl.gov'
+
+fi
 
 
 
